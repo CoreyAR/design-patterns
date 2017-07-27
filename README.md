@@ -5,3 +5,4 @@ These design pattern examples are python implementations of the Java examples fr
 
 - [Strategy](/strategy/warrior.py)
 - [Observer](/observer/)
+- [Decorator](/decorator/)
