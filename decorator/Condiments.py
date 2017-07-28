@@ -11,6 +11,10 @@ class CondimentDecorator(Beverage):
     def getDescription(self):
         pass
 
+    @abstractmethod
+    def cost(self):
+        pass
+
 
 class Soy(CondimentDecorator):
     def __init__(self, beverage):
