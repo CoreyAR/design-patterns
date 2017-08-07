@@ -7,3 +7,4 @@ These design pattern examples are python implementations of the Java examples fr
 - [Observer](/observer/)
 - [Decorator](/decorator/)
 - [Factory](/factory/)
+- [Singleton](/singleton/)
