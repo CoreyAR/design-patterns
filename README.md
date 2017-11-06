@@ -9,3 +9,4 @@ These design pattern examples are python implementations of the Java examples fr
 - [Factory](/factory/)
 - [Singleton](/singleton/)
 - [Command](/command/)
+- [Adapter / Facade](/adapter-facade/)
