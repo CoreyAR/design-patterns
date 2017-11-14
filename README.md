@@ -9,3 +9,4 @@ Python examples of the design patterns taught in [Head First Design Patterns](ht
 - [Singleton](/singleton/)
 - [Command](/command/)
 - [Adapter / Facade](/adapter-facade/)
+- [Template Method](/template-method/)
