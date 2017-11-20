@@ -10,3 +10,4 @@ Python examples of the design patterns taught in [Head First Design Patterns](ht
 - [Command](/command/)
 - [Adapter / Facade](/adapter-facade/)
 - [Template Method](/template-method/)
+- [Iterator / Composite](/iterator-composite/)

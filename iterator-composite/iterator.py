@@ -66,10 +66,10 @@ class CustomIterator(object):
         if isinstance(self.cars, types.GeneratorType):
             return next(self.cars.__iter__()) 
         elif self.length > self.idx:
-            # 
             if isinstance(self.cars, dict):
-                car = self.cars[next(self.keys.__iter__())]
-                car['model_name'] = self.keys[self.idx]
+                k = next(self.keys.__iter__())
+                car = self.cars[k]
+                car['model_name'] = k
                 self.idx += 1
                 return car
             car = self.cars[self.idx]
@@ -77,6 +77,31 @@ class CustomIterator(object):
             return car
         else:
             raise StopIteration
+
+    def back(self):
+        if self.idx <= 0:
+            raise StopIteration
+
+        if isinstance(self.cars, types.GeneratorType):
+            raise NotImplementedError
+        elif self.length > self.idx:
+            if isinstance(self.cars, dict):
+                self.idx -= 1
+                k = self.keys[idx]
+                car = self.cars[k]
+                car['model_name'] = k
+                return car
+            self.idx -= 1
+            car = self.cars[self.idx]
+            return car
+        else:
+            raise StopIteration
+    
+
+    def has_next(self):
+        if self.idx < self.length:
+            return True
+        return False
 
 
 if __name__ == '__main__':
@@ -96,3 +121,15 @@ if __name__ == '__main__':
     
     for c in cadillac_cars:
         print_make_model(c)
+
+    ford_cars_2 = CustomIterator(ford_list)
+    c = ford_cars_2.next()
+    print_make_model(c)
+    c = ford_cars_2.next()
+    print_make_model(c)
+    c = ford_cars_2.back()
+    print_make_model(c)
+    c = ford_cars_2.back()
+    print_make_model(c)
+    c = ford_cars_2.back()
+    print_make_model(c)
