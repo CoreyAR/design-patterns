@@ -1,4 +1,5 @@
 from abc import ABCMeta, abstractmethod
+
 class GumballState(object):
     __metaclass__ = ABCMeta
 
@@ -35,9 +36,12 @@ class SoldState(GumballState):
         print('A gumball comes rolling out the slot.')
         self.machine.count = self.machine.count - 1
         if (self.machine.count != 0):    
-            self.machine.state = self.machine.NO_QUARTER
+            self.machine.set_state(self.machine.NO_QUARTER)
         else:
-            self.machine.state = self.machine.SOLD_OUT
+            self.machine.set_state(self.machine.SOLD_OUT)
+    
+    def __str__(self):
+        return 'Sold State'
 
 class SoldOutState(GumballState):
     def insert_quarter(self):
@@ -51,11 +55,14 @@ class SoldOutState(GumballState):
 
     def dispense(self):
         print('No gumball dispensed.')
+    
+    def __str_(self):
+        return 'Sold Out State'
 
 class NoQuarterState(GumballState):
     def insert_quarter(self):
         print('You inserted a quarter.')
-        self.machine.state = self.machine.HAS_QUARTER
+        self.machine.set_state(self.machine.HAS_QUARTER)
 
     def eject_quarter(self):
         print('You have\'nt inserted a quarter.')
@@ -65,21 +72,27 @@ class NoQuarterState(GumballState):
 
     def dispense(self):
         print('You need to pay first.')
+    
+    def __str__(self):
+        return 'No Quarter State'
 
 class HasQuarterState(GumballState):
     def insert_quarter(self):
         print('You can\'t insert another quarter.')
 
     def eject_quarter(self):
-        self.machine.state = self.machine.NO_QUARTER
+        self.machine.set_state(self.machine.NO_QUARTER)
         print('Quarter returned')
 
     def turn_crank(self):
         print('You turned ...')
-        self.machine.state = self.machine.SOLD
+        self.machine.set_state(self.machine.SOLD)
 
     def dispense(self):
         print('No gumball dispensed. Turn crank.')
+
+    def __str__(self):
+        return 'Has Quarter State'
 
 
 class GumballMachine(object):
@@ -104,8 +117,14 @@ class GumballMachine(object):
         self.state.turn_crank()
         self.state.dispense()
     
-    def setState(self, state):
+    def set_state(self, state):
         self.state = state
+
+    def get_count(self):
+        return self.count
+    
+    def get_state(self):
+        return self.state
            
 
 if __name__ == '__main__':
