@@ -13,3 +13,4 @@ Python examples of the design patterns taught in [Head First Design Patterns](ht
 - [Iterator / Composite](/iterator-composite/)
 - [Iterator / Composite](/iterator-composite/)
 - [State](/state/)
+- [Proxy](/proxy/)
