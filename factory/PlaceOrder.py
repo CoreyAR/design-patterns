@@ -1,6 +1,6 @@
-from PizzaStore import NYPizzaStore
+from PizzaStore import PizzaStore
 
-ny_store = NYPizzaStore()
+ny_store = PizzaStore('New York')
 
 
 ny_store.order_pizza('cheese')

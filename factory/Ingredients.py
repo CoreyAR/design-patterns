@@ -11,54 +11,54 @@ class ThinCrustDough(Ingredient):
     def add(self):
         print('Preparing with thin crust dough.')
 
-class ThickCrustDough():
+class ThickCrustDough(Ingredient):
     def add(self):
         print('Preparing with think crust dough.')
 
-class MarineraSauce():
+class MarineraSauce(Ingredient):
    def add(self):
     print('Preparing with Marinera Sauce.')
 
-class PlumTomatoSauce():
+class PlumTomatoSauce(Ingredient):
     def add(self):
         print('Preparing with Plum Tomato Sauce.')
 
-class ReggianoCheese():
+class ReggianoCheese(Ingredient):
     def add(self):
         print('Sprinkling Reggiano Cheese on top.')
 
-class MozzarellaCheese():
+class MozzarellaCheese(Ingredient):
     def add(self):
         print('Sprinkling Mozzarella Cheese on top.')
 
-class Garlic():
+class Garlic(Ingredient):
     def add(self):
         print('Adding garlic topping.')
 
-class Onion():
+class Onion(Ingredient):
     def add(self):
         print('Adding onion topping.')
 
-class Mushroom():
+class Mushroom(Ingredient):
     def add(self):
         print('Adding mushroom topping.') 
 
-class RedPepper():
+class RedPepper(Ingredient):
     def add(self):
         print('Adding red pepper topping.')
 
-class Eggplant():
+class Eggplant(Ingredient):
     def add(self):
         print('Adding eggplant topping.')
 
-class Spinach():
+class Spinach(Ingredient):
     def add(self):
         print('Adding spinach topping.')
 
-class BlackOlives():
+class BlackOlives(Ingredient):
     def add(self):
         print('Adding black olives topping.')
 
-class SlicedPepperoni():
+class SlicedPepperoni(Ingredient):
     def add(self):
         print('Adding sliced pepperoni topping.')
